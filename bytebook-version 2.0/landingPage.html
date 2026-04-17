@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteBook — Movie Ticket Booking</title>
+    <link rel="stylesheet" href="landingPage.css" />
+</head>
+<body>
+    <header class="nav">
+      <div class="container nav__inner">
+        <a class="brand" href="#">
+          <span class="brand__logo">CB</span>
+          <span class="brand__text">ByteBook</span>
+        </a>
+
+        <nav class="nav__links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#app">App</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <div class="nav__actions">
+          <a class="btn btn--ghost" href="#app">Log in</a>
+          <a class="btn btn--primary" href="#app">Get started</a>
+        </div>
+
+        <button class="nav__menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <p class="pill"> ByteBook • Online Movie Ticket Booking</p>
+            <h1>
+              Book movie tickets fast —
+              <span class="accent">search, add to cart, book</span>, done.
+            </h1>
+            <p class="lead">
+              ByteBook helps customers log in, search for movies, add tickets to a cart,
+              create bookings, view bookings, cancel bookings, and check a simple manager report.
+            </p>
+
+            <div class="hero__cta">
+              <a class="btn btn--primary btn--lg" href="#app">Start booking</a>
+              <a class="btn btn--ghost btn--lg" href="#features">See features</a>
+            </div>
+
+            <div class="hero__stats" role="list">
+              <div class="stat" role="listitem">
+                <div class="stat__num">Login</div>
+                <div class="stat__label">Simple user access</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat__num">Cart</div>
+                <div class="stat__label">Add tickets before booking</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat__num">Report</div>
+                <div class="stat__label">Manager sales summary</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__mock">
+            <div class="mock">
+              <div class="mock__top">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <span class="mock__title">ByteBook • Dashboard</span>
+              </div>
+
+              <div class="mock__content">
+                <div class="card">
+                  <div class="card__title">Now Playing</div>
+                  <div class="card__row">
+                    <img class="poster" src="images/movie1.jpg" alt="Movie Poster">
+                    <div class="meta">
+                      <div class="meta__line"></div>
+                      <div class="meta__line meta__line--short"></div>
+                      <div class="chips">
+                        <span class="chip">6:00 PM</span>
+                        <span class="chip">7:30 PM</span>
+                        <span class="chip">9:00 PM</span>
+                      </div>
+                    </div>
+                    <button class="mini-btn" onclick="loadMovies()">Load</button>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card__title">Project Features</div>
+                  <div class="cartline">
+                    <span>Login</span>
+                    <span class="price">✓</span>
+                  </div>
+                  <div class="cartline">
+                    <span>Bookings</span>
+                    <span class="price">✓</span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="cartline cartline--total">
+                    <span>Manager Report</span>
+                    <span class="price">✓</span>
+                  </div>
+                  <a class="btn btn--primary btn--block" href="#app">Open App</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-section" id="features">
+        <div class="container">
+          <h2 class="section-title">Features</h2>
+          <div class="feature-grid">
+            <div class="card">
+              <div class="card__title">Login</div>
+              <p class="feature-text">Simple username and password check through the Java backend.</p>
+            </div>
+            <div class="card">
+              <div class="card__title">Movie Search</div>
+              <p class="feature-text">Load movies, showtimes, and prices from the backend and search by title.</p>
+            </div>
+            <div class="card">
+              <div class="card__title">Cart + Booking</div>
+              <p class="feature-text">Add a movie to cart, remove it, create bookings, and view booked movies.</p>
+            </div>
+            <div class="card">
+              <div class="card__title">Cancel + Report</div>
+              <p class="feature-text">Cancel a booking and show a simple manager report.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-section" id="app">
+  <div class="container">
+    <h2 class="section-title">ByteBook App</h2>
+
+    <div class="app-tabs">
+      <button class="tab-btn active" onclick="showTab('loginTab', this)">Login</button>
+      <button class="tab-btn" onclick="showTab('moviesTab', this)">Movies</button>
+      <button class="tab-btn" onclick="showTab('cartTab', this)">Cart</button>
+      <button class="tab-btn" onclick="showTab('bookingsTab', this)">Bookings</button>
+      <button class="tab-btn manager-only" id="reportTabButton" onclick="showTab('reportTab', this)" style="display:none;">Report</button>
+    </div>
+
+    <div id="loginTab" class="tab-panel active-panel">
+      <div class="card app-card">
+        <div class="card__title">Login</div>
+        <input id="username" class="app-input" type="text" placeholder="Username" />
+        <input id="password" class="app-input" type="password" placeholder="Password" />
+        <button class="btn btn--primary btn--block" onclick="login()">Login</button>
+        <div id="loginResult" class="output-box">Use john / 1234 or admin / admin123</div>
+      </div>
+    </div>
+
+    <div id="moviesTab" class="tab-panel">
+      <div class="card app-card">
+        <div class="card__title">Movies</div>
+        <div class="search-row">
+          <input id="searchInput" class="app-input" type="text" placeholder="Search movie title" />
+          <button class="btn btn--ghost" onclick="searchMovies()">Search</button>
+        </div>
+        <label for="ticketQuantity">Ticket Quantity</label>
+        <input id="ticketQuantity" class="app-input" type="number" min="1" value="1" />
+        <button class="btn btn--primary btn--block" onclick="loadMovies()">Show Movies</button>
+        <div id="movies" class="output-box">Movies and showtimes will show here.</div>
+      </div>
+    </div>
+
+    <div id="cartTab" class="tab-panel">
+      <div class="card app-card">
+        <div class="card__title">Cart</div>
+        <div id="cartMessage" class="output-box">Add a movie to cart to get started.</div>
+        <button class="btn btn--ghost btn--block" onclick="viewCart()">View Cart</button>
+        <div id="cartOutput" class="output-box">Cart will show here.</div>
+        <button class="btn btn--primary btn--block" onclick="createBookings()">Create Booking</button>
+      </div>
+    </div>
+
+    <div id="bookingsTab" class="tab-panel">
+      <div class="card app-card">
+        <div class="card__title">Bookings</div>
+        <div id="bookingMessage" class="output-box">Bookings will show here.</div>
+        <button class="btn btn--ghost btn--block" onclick="viewBookings()">View Bookings</button>
+        <div id="bookings" class="output-box">Booked movies will show here.</div>
+      </div>
+    </div>
+
+    <div id="reportTab" class="tab-panel">
+      <div class="card app-card full-width-card">
+        <div class="card__title">Manager Report</div>
+        <button class="btn btn--primary btn--block" onclick="report()">Show Report</button>
+        <div id="reportOutput" class="output-box">Report will show here.</div>
+      </div>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <footer class="footer" id="about">
+      <div class="container footer__inner">
+        <p>© <span id="year">2026</span> ByteBook • BitByBit Group Project</p>
+        <div class="footer__links">
+          <a href="#features">Features</a>
+          <a href="#app">App</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+    </footer>
+
+<script src="app.js"></script>
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  if (!nav) return;
+
+  if (nav.style.display === "block") {
+    nav.style.display = "none";
+  } else {
+    nav.style.display = "block";
+  }
+}
+</script>
+</body>
+</html>
