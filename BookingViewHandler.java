@@ -1,3 +1,26 @@
+/*
+Module/Class Name: BookingViewHandler.java
+Date of Code: 02/29/26
+Programmer: Esmeralda Munoz
+Brief Description:The BookingViewHandler.java class 
+retrieves the bookings from the bookings file.
+
+Important Functions:
+
+handle(HttpExchange exchange)
+Input: HTTP request
+Output: Response text
+Purpose: Retrieves all booking objects from the bookings file.
+
+send(...)
+Input: Response message
+Output: Sends response from server to the frontend
+
+Important Data Structures: List of bookings from the bookings.txt file
+
+Algorithm/Design Used: All bookings are read from the bookings file to
+display on the booking view page.
+*/
 
 import com.sun.net.httpserver.*;
 import java.io.*;
