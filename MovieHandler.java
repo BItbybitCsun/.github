@@ -1,7 +1,23 @@
-
+/* Class MovieHandler
+Date of Code: March 4
+Programmer: Gor
+Brief Description:
+The MovieHandler.java class returns the available movies to the frontend.
+Important Functions:
+handle(HttpExchange exchange)
+Input: HTTP request
+Output: Response text
+Purpose: Returns the list of available movies to the client.
+send(...)
+Input: Response message
+Output: Sends the message to the frontend
+Important Data Structures:
+List of Movie objects containing available movies for sale
+Algorithm/Design Used:
+A simple list object holds each movie object, and that list is returned to the frontend.
 import com.sun.net.httpserver.*;
 import java.io.*;
-import java.util.*;
+import java.util.*; */
 
 public class MovieHandler implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
