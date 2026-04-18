@@ -1,4 +1,23 @@
+/*
+Module/Class Name: CartAddHandler.java
+Date of Code: 03/11/26
+Programmer: Esmeralda Munoz
+Brief Description: The CartAddHandler.java class appends 
+the selected movie to the cart file.
 
+Important Functions:
+
+handle(HttpExchange exchange)
+Input: HTTP request
+Output: Response text
+Purpose: Appends the cart data to the cart file.
+
+Important Data Structures: Cart data stored in cart.txt
+
+Algorithm/Design Used: The cart data is added to the cart file after 
+the user adds items to their cart.
+
+*/
 import com.sun.net.httpserver.*;
 import java.io.*;
 

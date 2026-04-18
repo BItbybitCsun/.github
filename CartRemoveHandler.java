@@ -1,3 +1,23 @@
+/*
+Module/Class Name: CartRemoveHandler.java
+Date of Code: 03/11/26
+Programmer: Esmeralda Munoz
+Brief Description: The CartRemoveHandler.java class removes 
+an item from the cart file.
+
+Important Functions:
+
+handle(HttpExchange exchange)
+Input: HTTP request
+Output: Response text
+Purpose: Removes one item from the cart file.
+
+Important Data Structures: List or ArrayList of cart items
+
+Algorithm/Design Used: Because text files do not have the capability
+of deleting an item from a specific index, the cart file is rewritten
+after the item is selected for removal.
+*/
 
 import com.sun.net.httpserver.*;
 import java.io.*;
