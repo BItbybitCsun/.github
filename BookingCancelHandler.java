@@ -1,3 +1,27 @@
+/*
+Module/Class Name: BookingCancelHandler.java
+Date of Code: 02/29/26
+Programmer: Esmeralda Munoz
+Brief Description: The BookingCancelHandler.java class changes a
+booking status to canceled.
+
+Important Functions:
+
+handle(HttpExchange exchange)
+Input: HTTP request
+Output: Response text
+Purpose: Changes the status of the booking to canceled.
+
+send(...)
+Input: Response message
+Output: Sends response to the frontend
+
+Important Data Structures: List of bookings stored in bookings.txt file
+
+Algorithm/Design Used: A linear search is used to find the booking with 
+the entered booking ID. Then, all bookings are written to the file again 
+to reflect the change in status.
+*/
 
 import com.sun.net.httpserver.*;
 import java.io.*;
