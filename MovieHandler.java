@@ -14,10 +14,10 @@ Output: Sends the message to the frontend
 Important Data Structures:
 List of Movie objects containing available movies for sale
 Algorithm/Design Used:
-A simple list object holds each movie object, and that list is returned to the frontend.
+A simple list object holds each movie object, and that list is returned to the frontend.*/
 import com.sun.net.httpserver.*;
 import java.io.*;
-import java.util.*; */
+import java.util.*; 
 
 public class MovieHandler implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
