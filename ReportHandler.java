@@ -1,3 +1,22 @@
+/*Module/Class Name: ReportHandler.java
+Date of Code: March 10
+Programmer: Gor
+Brief Description:
+The ReportHandler.java class handles HTTP requests and generates a report from the bookings.txt file. 
+It calculates total bookings, booked and canceled counts, total tickets.
+Important Functions:
+handle(HttpExchange exchange)
+Input: HTTP request (exchange)
+Output: Sends report as text 
+Reads the file, processes booking data, and calculates totals.
+send(HttpExchange exchange, String response)
+Input: HTTP exchange and response string
+Output: Sends response to client
+Sets headers and writes the response.
+Important Data Structures:
+Uses a List<String> to store file lines and String[] to split each line into parts (like price, quantity, status).
+Algorithm/Design Used:
+Uses a simple loop to go through each line and calculate totals. This is used because it is easy and efficient for processing file data line by line. */
 
 import com.sun.net.httpserver.*;
 import java.io.*;
